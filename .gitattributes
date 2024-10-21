@@ -1,0 +1,14 @@
+# Đối với file JavaScript
+*.js linguist-language=JavaScript
+
+# Đối với file TypeScript
+*.ts linguist-language=TypeScript
+
+# Đối với file HTML
+*.html linguist-language=HTML
+
+# Đối với file CSS
+*.css linguist-language=JavaScript
+
+# Đối với file JSON
+*.json linguist-language=JSON

@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+#crossword-container {
+  display: grid;
+  grid-template-columns: repeat(18, 40px);
+  grid-template-rows: repeat(18, 40px); 
+  gap: 2px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  border: 1px solid #000;
+  background-color: white;
+}
+
+input[disabled] {
+  background-color: #e0e0e0;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+}

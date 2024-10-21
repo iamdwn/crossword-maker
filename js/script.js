@@ -1,5 +1,5 @@
 // Dữ liệu về vị trí và chữ cái trong ô chữ
-const crosswordData = [
+const crosswordData10 = [
     //Từ số 1
     { row: 0, col: 15, letter: "M" },
     { row: 1, col: 15, letter: "Â" },
@@ -91,16 +91,161 @@ const crosswordData = [
     { row: 16, col: 7, letter: "T" },
     { row: 17, col: 7, letter: "T" },
   ];
+
+  const crosswordData7 = [
+    //Từ số 1
+    { row: 0, col: 9, letter: "C" },
+    { row: 1, col: 9, letter: "Ô" },
+    { row: 2, col: 9, letter: "N" },
+    { row: 3, col: 9, letter: "G" },
+    { row: 4, col: 9, letter: "N" },
+    { row: 5, col: 9, letter: "H" },
+    { row: 6, col: 9, letter: "Â" },
+    { row: 7, col: 9, letter: "N" },
+
+    //Từ số 2
+    { row: 1, col: 15, letter: "T" },
+    { row: 2, col: 15, letter: "Á" },
+    { row: 3, col: 15, letter: "I" },
+    { row: 4, col: 15, letter: "S" },
+    { row: 5, col: 15, letter: "Ả" },
+    { row: 6, col: 15, letter: "N" },
+    { row: 7, col: 15, letter: "X" },
+    { row: 8, col: 15, letter: "U" },
+    { row: 9, col: 15, letter: "Ấ" },
+    { row: 10, col: 15, letter: "T" },
+
+    //Từ số 3
+    //Ngang
+    { row: 3, col: 3, letter: "L" },
+    { row: 3, col: 4, letter: "A" },
+    { row: 3, col: 5, letter: "O" },
+    { row: 3, col: 6, letter: "Đ" },
+    { row: 3, col: 7, letter: "Ộ" },
+    { row: 3, col: 8, letter: "N" },
+    { row: 3, col: 9, letter: "G" },
+
+    //Dọc
+    { row: 3, col: 3, letter: "L" },
+    { row: 4, col: 3, letter: "L" },
+    { row: 5, col: 3, letter: "L" },
+    { row: 6, col: 3, letter: "L" },
+    { row: 7, col: 3, letter: "L" },
+    { row: 8, col: 3, letter: "L" },
+    { row: 9, col: 3, letter: "L" },
+    { row: 10, col: 3, letter: "L" },
+
+    //Từ số 4
+    { row: 5, col: 13, letter: "T" },
+    { row: 6, col: 13, letter: "H" },
+    { row: 7, col: 13, letter: "Ặ" },
+    { row: 8, col: 13, letter: "N" },
+    { row: 9, col: 13, letter: "G" },
+    { row: 10, col: 13, letter: "D" },
+    { row: 11, col: 13, letter: "Ư" },
+
+    //Từ số 5
+    { row: 6, col: 8, letter: "M" },
+    { row: 6, col: 9, letter: "Â" },
+    { row: 6, col: 10, letter: "U" },
+    { row: 6, col: 11, letter: "T" },
+    { row: 6, col: 12, letter: "H" },
+    { row: 6, col: 13, letter: "U" },
+    { row: 6, col: 14, letter: "Ẫ" },
+    { row: 6, col: 15, letter: "N" },
+
+    //Từ số 6
+    { row: 7, col: 0, letter: "T" },
+    { row: 7, col: 1, letter: "Í" },
+    { row: 7, col: 2, letter: "C" },
+    { row: 7, col: 3, letter: "H" },
+    { row: 7, col: 4, letter: "L" },
+    { row: 7, col: 5, letter: "U" },
+    { row: 7, col: 6, letter: "Ỹ" },
+  ]
   
-  // Tạo bảng ô chữ
-  const container = document.getElementById('crossword-container');
-  
-  // Tạo 18x18 ô
-  for (let i = 0; i < 18; i++) {
-    for (let j = 0; j < 18; j++) {
+  const crosswordData5 = [
+    //Từ số 1
+    { row: 0, col: 8, letter: "T" },
+    { row: 1, col: 8, letter: "H" },
+    { row: 2, col: 8, letter: "Ặ" },
+    { row: 3, col: 8, letter: "N" },
+    { row: 4, col: 8, letter: "G" },
+    { row: 5, col: 8, letter: "D" },
+    { row: 6, col: 8, letter: "Ư" },
+
+    //Từ số 2
+    { row: 1, col: 5, letter: "L" },
+    { row: 2, col: 5, letter: "Ợ" },
+    { row: 3, col: 5, letter: "I" },
+    { row: 4, col: 5, letter: "N" },
+    { row: 5, col: 5, letter: "H" },
+    { row: 6, col: 5, letter: "U" },
+    { row: 7, col: 5, letter: "Ậ" },
+    { row: 8, col: 5, letter: "N" },
+    
+    //Từ số 3
+    { row: 1, col: 10, letter: "M" },
+    { row: 2, col: 10, letter: "Â" },
+    { row: 3, col: 10, letter: "U" },
+    { row: 4, col: 10, letter: "T" },
+    { row: 5, col: 10, letter: "H" },
+    { row: 6, col: 10, letter: "U" },
+    { row: 7, col: 10, letter: "Ẫ" },
+    { row: 8, col: 10, letter: "N" },
+
+    //Từ số 4
+    { row: 3, col: 3, letter: "T" },
+    { row: 3, col: 4, letter: "Á" },
+    { row: 3, col: 5, letter: "I" },
+    { row: 3, col: 6, letter: "S" },
+    { row: 3, col: 7, letter: "Ả" },
+    { row: 3, col: 8, letter: "N" },
+    { row: 3, col: 9, letter: "X" },
+    { row: 3, col: 10, letter: "U" },
+    { row: 3, col: 11, letter: "Ấ" },
+    { row: 3, col: 12, letter: "T" },
+
+    //Từ số 5
+    { row: 8, col: 0, letter: "L" },
+    { row: 8, col: 1, letter: "A" },
+    { row: 8, col: 2, letter: "O" },
+    { row: 8, col: 3, letter: "Đ" },
+    { row: 8, col: 4, letter: "Ộ" },
+    { row: 8, col: 5, letter: "N" },
+    { row: 8, col: 6, letter: "G" },
+  ]
+// Tạo bảng ô chữ
+const container = document.getElementById('crossword-container');
+
+document.getElementById('generateButton').addEventListener('click', () => {
+  const questionCount = parseInt(document.getElementById('questionCount').value);
+  let rows, cols;
+
+  // Xác định kích thước bảng dựa trên số lượng câu hỏi
+  if (questionCount === 5) {
+    rows = 13;
+    cols = 9;
+    crosswordData = crosswordData5;
+  } else if (questionCount === 7) {
+    rows = 16;
+    cols = 12;
+    crosswordData = crosswordData7;
+  } else if (questionCount === 10) {
+    rows = 18;
+    cols = 18;
+    crosswordData = crosswordData10;
+  }
+
+  // Xóa nội dung cũ
+  container.innerHTML = '';
+
+  // Tạo ô cho bảng
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
       const input = document.createElement('input');
       input.setAttribute('maxlength', '1'); // Chỉ cho phép nhập 1 ký tự
-  
+
       // Kiểm tra xem ô này có phải là một phần của ô chữ không
       const cellData = crosswordData.find(cell => cell.row === i && cell.col === j);
       if (cellData) {
@@ -108,33 +253,33 @@ const crosswordData = [
       } else {
         input.disabled = true; // Vô hiệu hóa các ô không dùng
       }
-  
+
       container.appendChild(input);
     }
   }
-  
-  // Xử lý sự kiện khi bấm nút "Kiểm tra Đáp Án"
-  document.getElementById('checkButton').addEventListener('click', () => {
-    let correct = true;
-  
-    // Kiểm tra tất cả các ô
-    document.querySelectorAll('#crossword-container input').forEach(input => {
-      if (!input.disabled && input.value.toUpperCase() !== input.dataset.correct) {
-        correct = false;
-        input.style.borderColor = 'red'; // Đánh dấu ô sai
-      } else {
-        input.style.borderColor = 'green'; // Đánh dấu ô đúng
-      }
-    });
-  
-    // Hiển thị kết quả
-    const result = document.getElementById('result');
-    if (correct) {
-      result.textContent = 'Chúc mừng! Bạn đã giải đúng ô chữ!';
-      result.style.color = 'green';
+});
+
+// Xử lý sự kiện khi bấm nút "Kiểm tra Đáp Án"
+document.getElementById('checkButton').addEventListener('click', () => {
+  let correct = true;
+
+  // Kiểm tra tất cả các ô
+  document.querySelectorAll('#crossword-container input').forEach(input => {
+    if (!input.disabled && input.value.toUpperCase() !== input.dataset.correct) {
+      correct = false;
+      input.style.borderColor = 'red'; // Đánh dấu ô sai
     } else {
-      result.textContent = 'Có lỗi trong câu trả lời của bạn. Hãy thử lại!';
-      result.style.color = 'red';
+      input.style.borderColor = 'green'; // Đánh dấu ô đúng
     }
   });
-  
+
+  // Hiển thị kết quả
+  const result = document.getElementById('result');
+  if (correct) {
+    result.textContent = 'Chúc mừng! Bạn đã giải đúng ô chữ!';
+    result.style.color = 'green';
+  } else {
+    result.textContent = 'Có lỗi trong câu trả lời của bạn. Hãy thử lại!';
+    result.style.color = 'red';
+  }
+});

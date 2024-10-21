@@ -219,61 +219,63 @@ const crosswordData10 = [
 const container = document.getElementById('crossword-container');
 
 document.getElementById('generateButton').addEventListener('click', () => {
-  const questionCount = parseInt(document.getElementById('questionCount').value);
-  let rows, cols;
+    const questionCount = parseInt(document.getElementById('questionCount').value);
+    let rows, cols;
 
-  // Xác định kích thước bảng dựa trên số lượng câu hỏi
-  if (questionCount === 5) {
-    rows = 13;
-    cols = 9;
-    crosswordData = crosswordData5;
-  } else if (questionCount === 7) {
-    rows = 16;
-    cols = 12;
-    crosswordData = crosswordData7;
-  } else if (questionCount === 10) {
-    rows = 18;
-    cols = 18;
-    crosswordData = crosswordData10;
-  }
+    if (questionCount === 5) {
+      rows = 9; 
+      cols = 13; 
+      crosswordData = crosswordData5;
 
-  // Xóa nội dung cũ
-  container.innerHTML = '';
+      document.getElementById('crossword-container').style.gridTemplateColumns = 'repeat(13, 40px)';
+      document.getElementById('crossword-container').style.gridTemplateRows = 'repeat(9, 40px)';
+    } else if (questionCount === 7) {
+      rows = 12; 
+      cols = 16; 
+      crosswordData = crosswordData7;
 
-  // Tạo ô cho bảng
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < cols; j++) {
-      const input = document.createElement('input');
-      input.setAttribute('maxlength', '1'); // Chỉ cho phép nhập 1 ký tự
+      document.getElementById('crossword-container').style.gridTemplateColumns = 'repeat(16, 40px)';
+      document.getElementById('crossword-container').style.gridTemplateRows = 'repeat(12, 40px)';
+    } else if (questionCount === 10) {
+      rows = 18;
+      cols = 18; 
+      crosswordData = crosswordData10;
 
-      // Kiểm tra xem ô này có phải là một phần của ô chữ không
-      const cellData = crosswordData.find(cell => cell.row === i && cell.col === j);
-      if (cellData) {
-        input.dataset.correct = cellData.letter; // Lưu đáp án đúng
-      } else {
-        input.disabled = true; // Vô hiệu hóa các ô không dùng
-      }
-
-      container.appendChild(input);
+      document.getElementById('crossword-container').style.gridTemplateColumns = 'repeat(18, 40px)';
+      document.getElementById('crossword-container').style.gridTemplateRows = 'repeat(18, 40px)';
     }
-  }
-});
+  
+    container.innerHTML = '';
+  
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        const input = document.createElement('input');
+        input.setAttribute('maxlength', '1'); 
+  
+        const cellData = crosswordData.find(cell => cell.row === i && cell.col === j);
+        if (cellData) {
+          input.dataset.correct = cellData.letter; 
+        } else {
+          input.disabled = true;
+        }
+  
+        container.appendChild(input);
+      }
+    }
+  });  
 
-// Xử lý sự kiện khi bấm nút "Kiểm tra Đáp Án"
 document.getElementById('checkButton').addEventListener('click', () => {
   let correct = true;
 
-  // Kiểm tra tất cả các ô
   document.querySelectorAll('#crossword-container input').forEach(input => {
     if (!input.disabled && input.value.toUpperCase() !== input.dataset.correct) {
       correct = false;
-      input.style.borderColor = 'red'; // Đánh dấu ô sai
+      input.style.borderColor = 'red'; 
     } else {
-      input.style.borderColor = 'green'; // Đánh dấu ô đúng
+      input.style.borderColor = 'green'; 
     }
   });
 
-  // Hiển thị kết quả
   const result = document.getElementById('result');
   if (correct) {
     result.textContent = 'Chúc mừng! Bạn đã giải đúng ô chữ!';

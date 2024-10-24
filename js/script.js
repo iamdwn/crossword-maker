@@ -215,7 +215,7 @@ const crosswordData10 = [
     { row: 8, col: 5, letter: "N" },
     { row: 8, col: 6, letter: "G" },
   ]
-// Tạo bảng ô chữ
+
 const container = document.getElementById('crossword-container');
 
 document.getElementById('generateButton').addEventListener('click', () => {
@@ -270,9 +270,13 @@ document.getElementById('checkButton').addEventListener('click', () => {
   document.querySelectorAll('#crossword-container input').forEach(input => {
     if (!input.disabled && input.value.toUpperCase() !== input.dataset.correct) {
       correct = false;
+      if (input.value.toUpperCase() !== '') 
+        input.style.backgroundColor = '#e48989'; 
       input.style.borderColor = 'red'; 
     } else {
       input.style.borderColor = 'green'; 
+      if (!input.disabled)
+      input.style.backgroundColor = '#71c58d';
     }
   });
 
@@ -281,7 +285,10 @@ document.getElementById('checkButton').addEventListener('click', () => {
     result.textContent = 'Chúc mừng! Bạn đã giải đúng ô chữ!';
     result.style.color = 'green';
   } else {
-    result.textContent = 'Có lỗi trong câu trả lời của bạn. Hãy thử lại!';
+    result.textContent = '';
     result.style.color = 'red';
   }
 });
+
+function showAllAnswers() {
+}
